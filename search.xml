@@ -12,6 +12,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[一切从零开始]]></title>
+    <url>%2F2019%2F02%2F19%2F%E4%B8%80%E5%88%87%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%2F</url>
+    <content type="text"><![CDATA[今天是农历八月十五，本来是在家团圆的好日子。如今却身在异乡，独自写博客。 8102 年十月份我离开学校，去了上海实习，本来万有激情，谁知大冬天的浇我一头凉水。虽然我不太喜欢干工作的内容，但没办法只能硬着头皮做了，本来打算实习完，中间我也攒够实力就离开，一切来得太突然，十二月份上旬我被迫离职，不过我的感谢这次离职，最起码让我重新认识了自己。但这次还是把我给打蒙了。不知道怎么办的我在中途竟然逃到了老爸那里，终于第二天鼓起勇气，又回了合肥，但在合肥面试了一个多月没有找到好工作就一直闲着。等到一月二十三回家过年。 在家差不多带了一个月，这次年过得是最没有年味的，我一直在楼上学习，前端编程，中间偶尔去走走亲戚。一直忍受着爸妈起床的煎熬到今天。 过年的时候就一直想怎么办？有时候豪气干云，但有时候又会对社会莫名的害怕与退缩。以前我做决定很果断，现在倒是很婆婆妈妈的。就拖着拖着，决定到 BOE 来，来的日期也一直拖着拖着到今天才来。今天到一个新的环境，并没有太失落，可能有些经历的缘故吧。无论如何好好干，努力学习前端，拿到毕业证的时候，前端技术亦可以出师。 当然，为此我愿每天拿出时间来学习，并以此形成习惯。 91020219 一切从零开始。。。]]></content>
+      <categories>
+        <category>我的随笔</category>
+      </categories>
+      <tags>
+        <tag>一切从零开始</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[运动框架]]></title>
     <url>%2F2019%2F02%2F15%2F%E8%BF%90%E5%8A%A8%E6%A1%86%E6%9E%B6%2F</url>
     <content type="text"><![CDATA[一、JSON学习1. 最简单的JSON示例JSON叫做JavaScript Object Notation， JavaScript对象表示法。由JS大牛Douglas发明。我们之前学习过数组：var arr = [“东邪”,”西毒”,”南帝”,”北丐”,&quot;中神通&quot;]数组很好用，arr[2] 就是南帝。但是我们发现，数组的下标，只能是阿拉伯数字，不能是我们任意取的。JSON的示例：123456var obj = &#123;&quot;name&quot;:&quot;考拉&quot;, &quot;age&quot; : 18, &quot;sex&quot; : &quot;不祥&quot;&#125;;console.log(obj.age); //18 语法： { “k” : v,“k” : v,“k” : v,“k” : v }访问某一个属性 能用点语法.就是“的”obj.age; //obj这个对象的age属性 也可以使用 [] 来表示属性, [] 里面是变量：var a = “age”;console.log(obj[a]); //18如果不想用变量，必须加引号：obj[“age”] //182. JSON的嵌套JSON里面，可以又是一个JSON1234567891011var obj = &#123; &quot;name&quot;:&quot;考拉&quot;, &quot;age&quot; : 18, &quot;sex&quot; : &quot;不祥&quot;, &quot;shengao&quot; : 193, &quot;peiou&quot; : &#123; &quot;name&quot; : &quot;Angelababy&quot;, &quot;age&quot; : 16, &quot;shengao&quot; : 168 &#125;&#125;; 所以，想得到168这个数字：obj.peiou.shengao 或 obj[peiou][shengo]现在只知道 Ajax 大量用到JSON。瀑布流的network里面。JSON作为大字典dictionary。 3. JSON项的添加和删除 增加obj里面的项，那么就用点语法赋值： 1234567 var obj = &#123; &quot;name&quot;:&quot;考拉&quot;, &quot;age&quot; : 18 &#125;; age++;//改变属性obj.sex = &quot;male&quot;;console.log(&quot;age&quot;); 删除某一个属性，使用delete关键字：delete obj.age; 4. JSON的遍历无法使用 for 循环会输出 undefined，对象没有 length属性。for…in语句是专门用来遍历JSON的语法： 123for(var k in obj)&#123; console.log(k + &quot;的值是&quot; + obj[k]); &#125; k会依次等于我们的obj里面的属性名，然后在循环语句里面，用obj[k]来读取这个值。 5.对象的克隆：12345678910//把obj1的属性名克隆到obj2var obj1 = &#123; &quot;name&quot; :&quot;花非花&quot;, &quot;eage&quot; : 34, &quot;sex&quot; : &quot;male&quot; &#125;; var obj2 = &#123;&#125;; for(var k in obj1)&#123; obj2[k]=&quot;花非花&quot;; //因为k是变量所以使用方括号 &#125;]]></content>
