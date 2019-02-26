@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="异形滚动,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Condor Hero" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="1、原理的揭示前言：图片大小处理问题的解决，当我们只改变盒子大小，图片会溢出，无法充满这个盒子。设置图片的宽高为 100%1234567891011121314151617181920&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;	&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;	&amp;l">
+<meta name="keywords" content="异形滚动">
+<meta property="og:type" content="article">
+<meta property="og:title" content="异形滚动">
+<meta property="og:url" content="http://yoursite.com/2019/02/27/异形滚动/index.html">
+<meta property="og:site_name" content="Condor Hero">
+<meta property="og:description" content="1、原理的揭示前言：图片大小处理问题的解决，当我们只改变盒子大小，图片会溢出，无法充满这个盒子。设置图片的宽高为 100%1234567891011121314151617181920&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;	&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;	&amp;l">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16069544-200949f03d139151.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16069544-f3bb492143bc0a38.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-02-26T17:05:51.177Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="异形滚动">
+<meta name="twitter:description" content="1、原理的揭示前言：图片大小处理问题的解决，当我们只改变盒子大小，图片会溢出，无法充满这个盒子。设置图片的宽高为 100%1234567891011121314151617181920&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;	&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;	&amp;l">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/16069544-200949f03d139151.gif?imageMogr2/auto-orient/strip">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/02/27/异形滚动/">
+
+
+
+
+
+  <title>异形滚动 | Condor Hero</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Condor Hero</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Divine Condor</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首&emsp;&emsp;页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于博主
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归&emsp;&emsp;档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标&emsp;&emsp;签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分&emsp;&emsp;类
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            站内搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/27/异形滚动/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Condor Hero">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://ws3.sinaimg.cn/large/005BYqpggy1fzgzvfkc2wj30p20p2abj.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Condor Hero">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">异形滚动</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-27T01:05:34+08:00">
+                2019-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://upload-images.jianshu.io/upload_images/16069544-200949f03d139151.gif?imageMogr2/auto-orient/strip" alt="异形滚动效果图.gif"></p>
+<h4 id="1、原理的揭示"><a href="#1、原理的揭示" class="headerlink" title="1、原理的揭示"></a>1、原理的揭示</h4><p><strong>前言：</strong>图片大小处理问题的解决，当我们只改变盒子大小，图片会溢出，无法充满这个盒子。设置图片的宽高为 100%<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;异形滚动&lt;/title&gt;</span><br><span class="line">	&lt;style&gt;</span><br><span class="line">		.box &#123;</span><br><span class="line">			width: 100px;</span><br><span class="line">			height: 100px;</span><br><span class="line">		&#125;</span><br><span class="line">		img &#123; //让图片充满整个盒子</span><br><span class="line">			width: 100%;</span><br><span class="line">			height: 100%;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div class=&quot;box&quot;&gt;&lt;img src=&quot;images/0.jpg&quot; alt=&quot;&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>从最低层的背景图开始解析。五个显示的图，两个隐藏的图。一个七个基本图样。<br><img src="https://upload-images.jianshu.io/upload_images/16069544-f3bb492143bc0a38.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="背景图"></p>
+<p>思路：</p>
+<ul>
+<li>放置背景图片（li 绝对定位，再用图片填充）</li>
+<li>点击时改变动画的 JSON<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;异形滚动&lt;/title&gt;</span><br><span class="line">	&lt;style&gt;</span><br><span class="line">		*&#123;</span><br><span class="line">			margin: 0;</span><br><span class="line">			padding: 0;</span><br><span class="line">		&#125;</span><br><span class="line">		.yixing&#123;</span><br><span class="line">			width: 670px;</span><br><span class="line">			height: 221px;</span><br><span class="line">			background: url(images/pic_bg.gif);</span><br><span class="line">			margin: 100px auto;</span><br><span class="line">			border: 1px solid #000;</span><br><span class="line">			position: relative;</span><br><span class="line">		&#125;</span><br><span class="line">		.yixing ul&#123;</span><br><span class="line">			list-style: none;</span><br><span class="line">		&#125;</span><br><span class="line">		.yixing ul li&#123;</span><br><span class="line">			position: absolute;</span><br><span class="line">		&#125;</span><br><span class="line">		/*img这个元素不会根据父亲来设置宽度、高度，所以我们就要写：*/</span><br><span class="line">		.yixing ul li img&#123;</span><br><span class="line">			width: 100%;</span><br><span class="line">			height: 100%;</span><br><span class="line">		&#125;</span><br><span class="line">		.yixing ul li.stateA&#123;width: 55px;height: 37px;left:-55px;top: 84px;&#125;</span><br><span class="line">		.yixing ul li.stateB&#123;width: 71px;height: 54px;left:16px;top: 67px;&#125;</span><br><span class="line">		.yixing ul li.stateC&#123;width: 122px;height: 86px;left:104px;top: 35px;&#125;</span><br><span class="line">		.yixing ul li.stateD&#123;width: 161px;height: 112px;left:247px;top: 16px;&#125;</span><br><span class="line">		.yixing ul li.stateE&#123;width: 122px;height: 86px;left:436px;top: 35px;&#125;</span><br><span class="line">		.yixing ul li.stateF&#123;width: 71px;height: 54px;left:583px;top: 67px;&#125;</span><br><span class="line">		.yixing ul li.stateG&#123;width: 55px;height: 37px;left:678px;top: 84px;&#125;</span><br><span class="line">	</span><br><span class="line">		.rightBtn&#123;</span><br><span class="line">			position: absolute;</span><br><span class="line">			top: 151px;</span><br><span class="line">			right: 20px;</span><br><span class="line">			width: 40px;</span><br><span class="line">			height: 40px;</span><br><span class="line">			background-color: red;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div class=&quot;yixing&quot;&gt;</span><br><span class="line">		&lt;ul&gt;</span><br><span class="line">			&lt;li class=&quot;stateA&quot;&gt;&lt;img src=&quot;images/number/0.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;</span><br><span class="line">			&lt;li class=&quot;stateB&quot;&gt;&lt;img src=&quot;images/number/1.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;</span><br><span class="line">			&lt;li class=&quot;stateC&quot;&gt;&lt;img src=&quot;images/number/2.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;</span><br><span class="line">			&lt;li class=&quot;stateD&quot;&gt;&lt;img src=&quot;images/number/3.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;</span><br><span class="line">			&lt;li class=&quot;stateE&quot;&gt;&lt;img src=&quot;images/number/4.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;</span><br><span class="line">			&lt;li class=&quot;stateF&quot;&gt;&lt;img src=&quot;images/number/5.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;</span><br><span class="line">			&lt;li class=&quot;stateG&quot;&gt;&lt;img src=&quot;images/number/6.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;</span><br><span class="line">		&lt;/ul&gt;</span><br><span class="line">		&lt;div class=&quot;btns&quot;&gt;</span><br><span class="line">			&lt;a href=&quot;javascript:;&quot; id=&quot;rightBtn&quot; class=&quot;rightBtn&quot;&gt;&lt;/a&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script type=&quot;text/javascript&quot; src=&quot;js/animate-2.0.1.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">		var lis = document.getElementsByTagName(&quot;li&quot;);</span><br><span class="line">		var rightBtn =  document.getElementById(&quot;rightBtn&quot;);</span><br><span class="line"></span><br><span class="line">		var JSONC = &#123;&quot;width&quot;: 122,&quot;height&quot;: 86,&quot;left&quot;:104,&quot;top&quot;: 35&#125;;</span><br><span class="line">		var JSOND = &#123;&quot;width&quot;: 161,&quot;height&quot;: 112,&quot;left&quot;:247,&quot;top&quot;: 16&#125;;</span><br><span class="line">		//理论上我们可以不厌其烦写JSONA、JSONB</span><br><span class="line"></span><br><span class="line">		rightBtn.onclick = function()&#123;</span><br><span class="line">			//理论上我们可以不厌其烦写</span><br><span class="line">			animate(lis[3],JSONC,1000,&quot;BounceEaseOut&quot;);</span><br><span class="line">			animate(lis[4],JSOND,1000,&quot;BounceEaseOut&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="2、JSON的优化"><a href="#2、JSON的优化" class="headerlink" title="2、JSON的优化"></a>2、JSON的优化</h4><ul>
+<li><p>获取 targetJSON 使用数组接受 JSON放进数组。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var JSONarr = [];</span><br><span class="line">		//把所有的状态都推入数组：</span><br><span class="line">		for(var i = 0 ; i &lt; lis.length ; i++)&#123;</span><br><span class="line">			JSONarr.push(&#123;</span><br><span class="line">				&quot;width&quot; 	: parseInt(fetchComputedStyle(lis[i],&quot;width&quot;)),</span><br><span class="line">				&quot;height&quot; 	: parseInt(fetchComputedStyle(lis[i],&quot;height&quot;)),</span><br><span class="line">				&quot;left&quot; 	: parseInt(fetchComputedStyle(lis[i],&quot;left&quot;)),</span><br><span class="line">				&quot;top&quot; 	: parseInt(fetchComputedStyle(lis[i],&quot;top&quot;))</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		console.log(JSONarr);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>右按钮的监听使用 for 进行优化，防止手写。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//右按钮的监听</span><br><span class="line">rightBtn.onclick = function()&#123;</span><br><span class="line">	//让1、2、3、4、5、6元素都分别变为数组中的0、1、2、3、4、5的状态</span><br><span class="line">	for(var i = 1 ; i &lt;= 6 ; i++)&#123;</span><br><span class="line">		animate(lis[i],JSONarr[i - 1],600,&quot;BounceEaseOut&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="3、增加二次点击效果"><a href="#3、增加二次点击效果" class="headerlink" title="3、增加二次点击效果"></a>3、增加二次点击效果</h4><p>这里是个难点今天，学了半天就是想不明白为什么不二次轮播，下午去吃了个饭，再仔细想想终于明白是怎么回事了。<br>以右击按钮为例，当我们点击的时候，图片依据 <strong>动画</strong> 左移。这里只是借助了动画改变了 li 的位置，li 盒子的编号依然没变，所以当我们再次点击盒子只是变到本身现在所处位置。我错就错在盒子转移到另一个盒子，认为他的盒子编号也随之发生改变。<br>想明白这点，我们就可以在动画完成后，改变盒子编号。这样下次的点击效果就会生效。又因为我们得到的 li 是一个类数组对象不能通过<code>pop</code>等进行操作。先把它放进一个数组里。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">var liArray = [];	//存放每个li的数组 新增1</span><br><span class="line"></span><br><span class="line">		var JSONarr = [];</span><br><span class="line"></span><br><span class="line">		//把所有的状态都推入数组：</span><br><span class="line">		for(var i = 0 ; i &lt; lis.length ; i++)&#123;</span><br><span class="line">			JSONarr.push(&#123;</span><br><span class="line">				&quot;width&quot; 	: parseInt(fetchComputedStyle(lis[i],&quot;width&quot;)),</span><br><span class="line">				&quot;height&quot; 	: parseInt(fetchComputedStyle(lis[i],&quot;height&quot;)),</span><br><span class="line">				&quot;left&quot; 	: parseInt(fetchComputedStyle(lis[i],&quot;left&quot;)),</span><br><span class="line">				&quot;top&quot; 	: parseInt(fetchComputedStyle(lis[i],&quot;top&quot;)),</span><br><span class="line">				&quot;opacity&quot; : parseInt(fetchComputedStyle(lis[i],&quot;opacity&quot;))</span><br><span class="line">			&#125;);</span><br><span class="line">			//liArray就和lis是一样的结构，lis是类数组对象，而liArray是数组 新增2</span><br><span class="line">			liArray.push(lis[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	//右按钮的监听</span><br><span class="line">		rightBtn.onclick = function()&#123;</span><br><span class="line">			//让1、2、3、4、5、6元素都分别变为数组中的0、1、2、3、4、5的状态</span><br><span class="line">			for(var i = 1 ; i &lt;= 6 ; i++)&#123;</span><br><span class="line">				animate(liArray[i],JSONarr[i - 1],600,&quot;BounceEaseOut&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			//让0号元素瞬移</span><br><span class="line">			for(var k in JSONarr[6])&#123;</span><br><span class="line">				liArray[0].style[k] = JSONarr[6][k] + &quot;px&quot;;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			//交换身份！！新增3</span><br><span class="line">			liArray.push(liArray.shift());</span><br><span class="line"> </span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="4、设置节流，自动轮播，和opacity"><a href="#4、设置节流，自动轮播，和opacity" class="headerlink" title="4、设置节流，自动轮播，和opacity"></a>4、设置节流，自动轮播，和opacity</h4><p>设置 opacity 主要是兼容左右轮播时的淡入淡出。<br>函数节流，因为所有的 li 盒子都是动的，所以节流我们只需要随便设置一个盒子。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;异形滚动&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">		*&#123;</span><br><span class="line">			margin: 0;</span><br><span class="line">			padding: 0;</span><br><span class="line">		&#125;</span><br><span class="line">		.yixing&#123;</span><br><span class="line">			width: 670px;</span><br><span class="line">			height: 221px;</span><br><span class="line">			background: url(images/pic_bg.gif);</span><br><span class="line">			margin: 100px auto;</span><br><span class="line">			border: 1px solid #000;</span><br><span class="line">			position: relative;</span><br><span class="line">			overflow: hidden;</span><br><span class="line">		&#125;</span><br><span class="line">		.yixing ul&#123;</span><br><span class="line">			list-style: none;</span><br><span class="line">		&#125;</span><br><span class="line">		.yixing ul li&#123;</span><br><span class="line">			position: absolute;</span><br><span class="line">			opacity: 1;</span><br><span class="line">			filter:alpha(opacity=100);</span><br><span class="line">		&#125;</span><br><span class="line">		/*img这个元素不会根据父亲来设置宽度、高度，所以我们就要写：*/</span><br><span class="line">		.yixing ul li img&#123;</span><br><span class="line">			width: 100%;</span><br><span class="line">			height: 100%;</span><br><span class="line">		&#125;</span><br><span class="line">		.yixing ul li.stateA&#123;width: 55px;height: 37px;left:-55px;top: 84px; opacity: 0; filter:alpha(opacity=0);&#125;</span><br><span class="line">		.yixing ul li.stateB&#123;width: 71px;height: 54px;left:16px;top: 67px;&#125;</span><br><span class="line">		.yixing ul li.stateC&#123;width: 122px;height: 86px;left:104px;top: 35px;&#125;</span><br><span class="line">		.yixing ul li.stateD&#123;width: 161px;height: 112px;left:247px;top: 16px;&#125;</span><br><span class="line">		.yixing ul li.stateE&#123;width: 122px;height: 86px;left:436px;top: 35px;&#125;</span><br><span class="line">		.yixing ul li.stateF&#123;width: 71px;height: 54px;left:583px;top: 67px;&#125;</span><br><span class="line">		.yixing ul li.stateG&#123;width: 55px;height: 37px;left:678px;top: 84px; opacity: 0;filter:alpha(opacity=0);&#125;</span><br><span class="line">	</span><br><span class="line">		.rightBtn&#123;</span><br><span class="line">			position: absolute;</span><br><span class="line">			top: 151px;</span><br><span class="line">			right: 20px;</span><br><span class="line">			width: 40px;</span><br><span class="line">			height: 40px;</span><br><span class="line">			background-color: red;</span><br><span class="line">		&#125;</span><br><span class="line">		.leftBtn&#123;</span><br><span class="line">			position: absolute;</span><br><span class="line">			top: 151px;</span><br><span class="line">			left: 20px;</span><br><span class="line">			width: 40px;</span><br><span class="line">			height: 40px;</span><br><span class="line">			background-color: red;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div class=&quot;yixing&quot; id=&quot;yixing&quot;&gt;</span><br><span class="line">		&lt;ul&gt;</span><br><span class="line">			&lt;li class=&quot;stateA&quot;&gt;&lt;img src=&quot;images/number/0.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;</span><br><span class="line">			&lt;li class=&quot;stateB&quot;&gt;&lt;img src=&quot;images/number/1.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;</span><br><span class="line">			&lt;li class=&quot;stateC&quot;&gt;&lt;img src=&quot;images/number/2.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;</span><br><span class="line">			&lt;li class=&quot;stateD&quot;&gt;&lt;img src=&quot;images/number/3.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;</span><br><span class="line">			&lt;li class=&quot;stateE&quot;&gt;&lt;img src=&quot;images/number/4.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;</span><br><span class="line">			&lt;li class=&quot;stateF&quot;&gt;&lt;img src=&quot;images/number/5.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;</span><br><span class="line">			&lt;li class=&quot;stateG&quot;&gt;&lt;img src=&quot;images/number/6.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;</span><br><span class="line">		&lt;/ul&gt;</span><br><span class="line">		&lt;div class=&quot;btns&quot;&gt;</span><br><span class="line">			&lt;a href=&quot;javascript:;&quot; id=&quot;leftBtn&quot; class=&quot;leftBtn&quot;&gt;&lt;/a&gt;</span><br><span class="line">			&lt;a href=&quot;javascript:;&quot; id=&quot;rightBtn&quot; class=&quot;rightBtn&quot;&gt;&lt;/a&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script type=&quot;text/javascript&quot; src=&quot;js/animate-2.0.1.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot; src=&quot;js/fetchComputedStyle.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">		var yixing =  document.getElementById(&quot;yixing&quot;);</span><br><span class="line">		var rightBtn =  document.getElementById(&quot;rightBtn&quot;);</span><br><span class="line">		var leftBtn =  document.getElementById(&quot;leftBtn&quot;);</span><br><span class="line">		var lis = document.getElementsByTagName(&quot;li&quot;);</span><br><span class="line">		//lis是类数组对象，getElementsByTagName得到的元素们是类数组对象，不是数组</span><br><span class="line">		//所以lis没有pop方法、没有unshift()方法！</span><br><span class="line">		var liArray = [];	//存放每个li的数组</span><br><span class="line"></span><br><span class="line">		var JSONarr = [];</span><br><span class="line"></span><br><span class="line">		//把所有的状态都推入数组：</span><br><span class="line">		for(var i = 0 ; i &lt; lis.length ; i++)&#123;</span><br><span class="line">			JSONarr.push(&#123;</span><br><span class="line">				&quot;width&quot; 	: parseInt(fetchComputedStyle(lis[i],&quot;width&quot;)),</span><br><span class="line">				&quot;height&quot; 	: parseInt(fetchComputedStyle(lis[i],&quot;height&quot;)),</span><br><span class="line">				&quot;left&quot; 	: parseInt(fetchComputedStyle(lis[i],&quot;left&quot;)),</span><br><span class="line">				&quot;top&quot; 	: parseInt(fetchComputedStyle(lis[i],&quot;top&quot;)),</span><br><span class="line">				&quot;opacity&quot; : parseInt(fetchComputedStyle(lis[i],&quot;opacity&quot;))</span><br><span class="line">			&#125;);</span><br><span class="line">			//liArray就和lis是一样的结构，lis是类数组对象，而liArray是数组</span><br><span class="line">			liArray.push(lis[i]);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		//console.log(JSONarr);</span><br><span class="line"></span><br><span class="line">		//右按钮的监听</span><br><span class="line">		rightBtn.onclick = rightBtnHandler;</span><br><span class="line"></span><br><span class="line">		var timer = setInterval(rightBtnHandler,2000);</span><br><span class="line">		yixing.onmouseover = function()&#123;clearInterval(timer);&#125;;</span><br><span class="line">		yixing.onmouseout = function()&#123;timer = setInterval(rightBtnHandler,2000);&#125;;</span><br><span class="line"></span><br><span class="line">		function rightBtnHandler()&#123;</span><br><span class="line">			//节流</span><br><span class="line">			if(liArray[1].isanimated) return;</span><br><span class="line"></span><br><span class="line">			//让1、2、3、4、5、6元素都分别变为数组中的0、1、2、3、4、5的状态</span><br><span class="line">			for(var i = 1 ; i &lt;= 6 ; i++)&#123;</span><br><span class="line">				animate(liArray[i],JSONarr[i - 1],600,&quot;BounceEaseOut&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			//让0号元素瞬移</span><br><span class="line">			for(var k in JSONarr[6])&#123;</span><br><span class="line">				liArray[0].style[k] = JSONarr[6][k] + &quot;px&quot;;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			//交换身份！！</span><br><span class="line">			liArray.push(liArray.shift());</span><br><span class="line"> </span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		//左按钮的监听</span><br><span class="line">		leftBtn.onclick = function()&#123;</span><br><span class="line">			//节流</span><br><span class="line">			if(liArray[1].isanimated) return;</span><br><span class="line">			 </span><br><span class="line">			for(var i = 0 ; i &lt;= 5 ; i++)&#123;</span><br><span class="line">				animate(liArray[i],JSONarr[i + 1],600,&quot;BounceEaseOut&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			//让0号元素瞬移</span><br><span class="line">			for(var k in JSONarr[0])&#123;</span><br><span class="line">				liArray[6].style[k] = JSONarr[0][k] + &quot;px&quot;;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			//交换身份！！</span><br><span class="line">			liArray.unshift(liArray.pop());</span><br><span class="line"> </span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>一路走来，感谢有你</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://ws3.sinaimg.cn/large/005BYqpggy1fzfgyvd98pj30s00s0mxu.jpg" alt="Condor Hero 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/异形滚动/" rel="tag"># 异形滚动</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/25/间歇轮播/" rel="next" title="间歇轮播">
+                <i class="fa fa-chevron-left"></i> 间歇轮播
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://ws3.sinaimg.cn/large/005BYqpggy1fzgzvfkc2wj30p20p2abj.jpg" alt="Condor Hero">
+            
+              <p class="site-author-name" itemprop="name">Condor Hero</p>
+              <p class="site-description motion-element" itemprop="description">记录生活，努力学习。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/condorheroblog" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:2846124732@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/491bd4155f96" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-globe"></i>简书</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://sighttp.qq.com/authd?IDKEY=f67c919702f76aff21f09284308fe39875d3f6b466780165" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-globe"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、原理的揭示"><span class="nav-number">1.</span> <span class="nav-text">1、原理的揭示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、JSON的优化"><span class="nav-number">2.</span> <span class="nav-text">2、JSON的优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、增加二次点击效果"><span class="nav-number">3.</span> <span class="nav-text">3、增加二次点击效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、设置节流，自动轮播，和opacity"><span class="nav-number">4.</span> <span class="nav-text">4、设置节流，自动轮播，和opacity</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Condor Hero</span>
+
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+由hexo驱动-->
+
+
+  <!--<div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>版本号-->
+
+
+
+
+
+<!--以下为添加的代码-->
+      <!--统计start-->
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <div class="powered-by">
+        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+          本站访客数:<span id="busuanzi_value_site_pv"></span>
+        </span>
+        </div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
