@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="CMS,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Condor Hero" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="一、网站安装 苹果 CMS 建站系统。苹果 CMS 是一套成熟稳定的资源管理系统，可以用来搭建自己的影视网站。现在网络上大量的在线观看电影的网站，有很大一部分都是采用苹果CMS搭建的。它具有很多优点，包括一键建站、配置简单、资源采集方便等等。这里介绍一下搭建苹果CMS系统的方法，以及其配置方法。（可以先看一下我自己搭建的网站：考拉影院） 一、申请一个属于自己的VPS主机 小白自建网站教程  二、搭">
+<meta name="keywords" content="CMS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学会苹果 CMS 系统，搭建影视网站">
+<meta property="og:url" content="http://yoursite.com/2019/03/12/学会苹果 CMS 系统，搭建影视网站/index.html">
+<meta property="og:site_name" content="Condor Hero">
+<meta property="og:description" content="一、网站安装 苹果 CMS 建站系统。苹果 CMS 是一套成熟稳定的资源管理系统，可以用来搭建自己的影视网站。现在网络上大量的在线观看电影的网站，有很大一部分都是采用苹果CMS搭建的。它具有很多优点，包括一键建站、配置简单、资源采集方便等等。这里介绍一下搭建苹果CMS系统的方法，以及其配置方法。（可以先看一下我自己搭建的网站：考拉影院） 一、申请一个属于自己的VPS主机 小白自建网站教程  二、搭">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/16322776-5d6a3b130df1b113.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/16322776-cc3d07a52efcfb3b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/16322776-2d9417a60c8c4259.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/16322776-aa92bd93aabc78f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16069544-ea85b1138758bdb7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16069544-16711ca9a0d8f382.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16069544-4bda044952ce76aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16069544-ab78a95ac2c97155.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16069544-5fcc558952bffba2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16069544-8c55db6a65be2471.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16069544-e06ce1cddb760d4f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16069544-9471404309564d2a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16069544-e37e71ce4e6f151b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16069544-8880d09cd5c4c4fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-03-28T10:08:21.329Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学会苹果 CMS 系统，搭建影视网站">
+<meta name="twitter:description" content="一、网站安装 苹果 CMS 建站系统。苹果 CMS 是一套成熟稳定的资源管理系统，可以用来搭建自己的影视网站。现在网络上大量的在线观看电影的网站，有很大一部分都是采用苹果CMS搭建的。它具有很多优点，包括一键建站、配置简单、资源采集方便等等。这里介绍一下搭建苹果CMS系统的方法，以及其配置方法。（可以先看一下我自己搭建的网站：考拉影院） 一、申请一个属于自己的VPS主机 小白自建网站教程  二、搭">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/16322776-5d6a3b130df1b113.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/12/学会苹果 CMS 系统，搭建影视网站/">
+
+
+
+
+
+  <title>学会苹果 CMS 系统，搭建影视网站 | Condor Hero</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Condor Hero</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Divine Condor</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首&emsp;&emsp;页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于博主
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归&emsp;&emsp;档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标&emsp;&emsp;签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分&emsp;&emsp;类
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            站内搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/12/学会苹果 CMS 系统，搭建影视网站/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Condor Hero">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://ws3.sinaimg.cn/large/005BYqpggy1fzgzvfkc2wj30p20p2abj.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Condor Hero">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">学会苹果 CMS 系统，搭建影视网站</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-12T00:53:19+08:00">
+                2019-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术教程/" itemprop="url" rel="index">
+                    <span itemprop="name">技术教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="一、网站安装-苹果-CMS-建站系统。"><a href="#一、网站安装-苹果-CMS-建站系统。" class="headerlink" title="一、网站安装 苹果 CMS 建站系统。"></a>一、网站安装 苹果 CMS 建站系统。</h4><p>苹果 CMS 是一套成熟稳定的资源管理系统，可以用来搭建自己的影视网站。现在网络上大量的在线观看电影的网站，有很大一部分都是采用苹果CMS搭建的。它具有很多优点，包括一键建站、配置简单、资源采集方便等等。这里介绍一下搭建苹果CMS系统的方法，以及其配置方法。（<a href="https://www.52world.club/" target="_blank" rel="noopener">可以先看一下我自己搭建的网站：考拉影院</a>）</p>
+<p>一、申请一个属于自己的VPS主机</p>
+<p><a href="https://mp.weixin.qq.com/s/iR3uYnvVVgqkNb-ZBb2wig" target="_blank" rel="noopener">小白自建网站教程</a> </p>
+<p>二、搭建LAMP环境</p>
+<p>在安装苹果CMS之前，要先要在你的VPS上搭建LAMP环境。所谓的LAMP指的Linux+Apache+Mysql+PHP. 其中，你的操作系统ubuntu就是Linux。Apache是http服务器，浏览器通过服务器（也就是你的VPS）上的apache提供的服务才能获取到网页资源，从而显示在你的电脑屏幕上。Mysql是数据库，你的网站（这里即是苹果CMS）动态运行时所存取的数据都是由数据库来管理的。PHP与Apache相互配合为用户提供动态的网页，我们要安装的苹果CMS就是php语言编写的，他的运行必须依赖于PHP环境。</p>
+<p>关于LAMP环境的搭建方法，网上有太多的教程，这里不介绍具体的安装方法，请自行在百度中搜索，其安装很简单，在ubuntu下使用apt-get命令即可安装。</p>
+<p>三、安装苹果CMS</p>
+<p>首先，到<a href="http://www.maccms.com/down.html" target="_blank" rel="noopener">苹果CMS官网</a>上下载安装包，上传到网站根目录，然后在你的浏览器中访问 http://你的ip地址或域名/install.php 即可进入安装界面，如下所示：</p>
+<p><img src="//upload-images.jianshu.io/upload_images/16322776-5d6a3b130df1b113.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt="学贤社"></p>
+<p>然后，点击“同意协议并安装系统”，此时进入下面的环境监测界面。安装程序会检查一下你的vps上所安装的插件是否符合苹果CMS的要求，只有符合要求时，苹果CMS才能正常运行，因此这一步的检测是必要的。</p>
+<p><img src="//upload-images.jianshu.io/upload_images/16322776-cc3d07a52efcfb3b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt="学贤社"></p>
+<p>当然，既然是检测环境，当然会有某些检查项不符合要求的情况，万一哪一项不符合要求，这里会用红色高亮的色带将其标识出来。一般检测不通过都是因为系统中缺少某些插件，很简单自行百度解决。当这一步检测全部成功后，即可点击“进行下一步”按钮，此时进入如下界面：</p>
+<p><img src="//upload-images.jianshu.io/upload_images/16322776-2d9417a60c8c4259.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt="学贤社"></p>
+<p>这里有关数据库的信息，按照你的MySQL中的实际配置填写就好，目的是让苹果CMS通过这些参数能够登录到你的MySQL上，只有这样，苹果CMS才能使用数据库读写所需的数据。</p>
+<p>下面的管理员账号密码是你日后用来登录苹果CMS后台时所需的用户名和密码，请设置一个足够长，并且足够安全，不易被破解的密码并牢记它。</p>
+<p>最后，点击“立即执行安装”按钮，稍等片刻即安装成功。此时，在浏览器中输入 http://你的vps的ip地址或域名/index.php 即可看到苹果CMS的主页（即前台界面）。这个页面就是外界访问你的站点时看到的首页。</p>
+<p>在浏览器中输入 http://你的vps的ip地址或域名/admin.php 即可登录苹果CMS后台管理界面。在后台管理页面，你可以做与你的站点相关的一切设置，包括采集视频、设置播放器、更换模板、设置SEO优化等等。这部分内容十分繁杂，只有成功采集到视频数据后，你的网站上才有内容，别人才能够在你的网站上观看视频，否则你的网站就是空的，没什么实质性内容。</p>
+<p>这里只简单介绍一下如何采集系统自带的资源站的数据，如下如所示的步骤操作即可：</p>
+<p><img src="//upload-images.jianshu.io/upload_images/16322776-aa92bd93aabc78f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt="学贤社"></p>
+<p>采集时可能会报错“分类未绑定”，这是因为你的站点的电影分类与资源站上的电影分类没有建立一一对应关系，因此，苹果CMS并不知道资源站上的A分类对应到你的站点上是哪一个分类。此时只需绑定分类即可，这些操作都不难，稍加摸索即可上手。</p>
+<p>到这里只讲了苹果CMS的安装和配置，至于（自定义）采集视频、站点的高级设置、网站SEO优化等高阶话题，可以参看其它资料。</p>
+<p><strong>下面讲我基于以上基础怎么安装好 CMS 使用 vfed （大橙子）主题其他主题类似搭建影视网站的。</strong></p>
+<h4 id="二、上传模板"><a href="#二、上传模板" class="headerlink" title="二、上传模板"></a>二、上传模板</h4><p>把解压的 vfed主题 上传到网站的 template 文件里。打开后台：<br>vfed主题设置<br>默认会自动添加到快捷菜单，如果没显示请点击快捷菜单配置，手动添加<br><code>vfed主题设置,/index.php/label/admin</code><br><code>vfed采集资源,/index.php/label/union</code><br>设置完成后保存刷新即可<br><img src="https://upload-images.jianshu.io/upload_images/16069544-ea85b1138758bdb7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<h4 id="三、采集影视资源"><a href="#三、采集影视资源" class="headerlink" title="三、采集影视资源"></a>三、采集影视资源</h4><p>以下三种方法任选一种。</p>
+<ol>
+<li>自定义采集点，我用的几个资源采集网站：</li>
+</ol>
+<ul>
+<li><a href="http://dh.pv00.com/" target="_blank" rel="noopener">影视资源导航_影视资源采集导航网</a> <a href="http://dh.pv00.com/" target="_blank" rel="noopener">http://dh.pv00.com/</a></li>
+<li><a href="http://yongjiuzy.cc/?m=vod-type-id-1.html" target="_blank" rel="noopener">永久资源</a><a href="http://yongjiuzy.cc/?m=vod-type-id-1.html" target="_blank" rel="noopener">http://yongjiuzy.cc/?m=vod-type-id-1.html</a></li>
+<li><a href="http://doubanzy.com/?m=vod-type-id-19.html" target="_blank" rel="noopener">伦理片</a>  <a href="http://doubanzy.com/?m=vod-type-id-19.html" target="_blank" rel="noopener">http://doubanzy.com/?m=vod-type-id-19.html</a></li>
+</ul>
+<ol start="2">
+<li>使用主题自带的影视采集资源</li>
+<li>使用苹果 CMS 自带的采集联盟采集。还可以更换插件。详情<a href="http://www.xiaolinwl.com/post/15.html" target="_blank" rel="noopener">苹果CMSV10免费采集插件+播放器文件，整合各大影视资源采集站，影视站长福利！</a><a href="http://www.xiaolinwl.com/post/15.html" target="_blank" rel="noopener">http://www.xiaolinwl.com/post/15.html</a><h4 id="四、采集"><a href="#四、采集" class="headerlink" title="四、采集"></a>四、采集</h4>采集 自定义资源库<img src="https://upload-images.jianshu.io/upload_images/16069544-16711ca9a0d8f382.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="自定义资源库"><br>完成后点击自己绑定的链接，接下来绑定分类，进行采集。参考第一步的教程。<h4 id="三、播放器添加"><a href="#三、播放器添加" class="headerlink" title="三、播放器添加"></a>三、播放器添加</h4>基本一个采集网址单配一个播放器，所以只要换了采集网址就得加与之匹配的播放器。<br><img src="https://upload-images.jianshu.io/upload_images/16069544-4bda044952ce76aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="采集站多了，播放器也多了"></li>
+</ol>
+<ul>
+<li>如果使用主题采集的。</li>
+</ul>
+<ol>
+<li>点击首页 -&gt; vfed采集资源，找到你想采集的资源站，点击播放配置完成添加，不然电脑无法播放。</li>
+<li>一般主题会自己带播放器。（想用另一个主题的播放器，上传另一个主题同样配置方式。）这样就不要每个网站都设置，使用别人的播放器了。下面看方法。<br><strong>首先得看主题播放器支持什么格式的。这里支持 M3U8 的。</strong></li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/16069544-ab78a95ac2c97155.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="默认M3U8播放器"></p>
+<p><strong>再去看来源，点击采集链接就能跳到下面页面。</strong></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/16069544-5fcc558952bffba2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="来源"></p>
+<p><strong>配置播放器</strong></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/16069544-8c55db6a65be2471.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="配置播放器"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/16069544-e06ce1cddb760d4f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="代码复制"></p>
+<p>到这里如果你立马去看视频会发现可以播放了，但是也会发现影片播放区有大家常见的广告。而我们的播放器是不带广告的，原因就是你没让我们的播放器去解析视频。<br><strong>所以但我们保存完成之后要把解析状态设为启用，这样就行了，而且没有广告。</strong></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/16069544-9471404309564d2a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果图演示"></p>
+<ul>
+<li>自定义网站采集的两种播放器配置的方法。</li>
+</ul>
+<ol>
+<li>TXT格式直接导入，在采集功能的旁边。</li>
+<li>JS格式 打开JS代码添加进去<br><img src="https://upload-images.jianshu.io/upload_images/16069544-e37e71ce4e6f151b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="JS 播放器"><br><img src="https://upload-images.jianshu.io/upload_images/16069544-8880d09cd5c4c4fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="JS播放器2"></li>
+</ol>
+<p>最后启用，就 ojbk 了。</p>
+<h4 id="四、定时采集"><a href="#四、定时采集" class="headerlink" title="四、定时采集"></a>四、定时采集</h4><p>自己绑定 360 监控，简单使用的百度。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>一路走来，感谢有你</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://ws3.sinaimg.cn/large/005BYqpggy1fzfgyvd98pj30s00s0mxu.jpg" alt="Condor Hero 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CMS/" rel="tag"># CMS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/11/手风琴实例/" rel="next" title="手风琴实例">
+                <i class="fa fa-chevron-left"></i> 手风琴实例
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/13/你不知道&我关注的几个博客/" rel="prev" title="你不知道&我关注的几个博客">
+                你不知道&我关注的几个博客 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://ws3.sinaimg.cn/large/005BYqpggy1fzgzvfkc2wj30p20p2abj.jpg" alt="Condor Hero">
+            
+              <p class="site-author-name" itemprop="name">Condor Hero</p>
+              <p class="site-description motion-element" itemprop="description">记录生活，努力学习。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/condorheroblog" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:2846124732@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/491bd4155f96" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-globe"></i>简书</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://sighttp.qq.com/authd?IDKEY=f67c919702f76aff21f09284308fe39875d3f6b466780165" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-globe"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、网站安装-苹果-CMS-建站系统。"><span class="nav-number">1.</span> <span class="nav-text">一、网站安装 苹果 CMS 建站系统。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、上传模板"><span class="nav-number">2.</span> <span class="nav-text">二、上传模板</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、采集影视资源"><span class="nav-number">3.</span> <span class="nav-text">三、采集影视资源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、采集"><span class="nav-number">4.</span> <span class="nav-text">四、采集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、播放器添加"><span class="nav-number">5.</span> <span class="nav-text">三、播放器添加</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、定时采集"><span class="nav-number">6.</span> <span class="nav-text">四、定时采集</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Condor Hero</span>
+
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+由hexo驱动-->
+
+
+  <!--<div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>版本号-->
+
+
+
+
+
+<!--以下为添加的代码-->
+      <!--统计start-->
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <div class="powered-by">
+        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+          本站访客数:<span id="busuanzi_value_site_pv"></span>
+        </span>
+        </div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

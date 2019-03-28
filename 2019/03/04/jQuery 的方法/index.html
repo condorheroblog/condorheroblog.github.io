@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="jQuery,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Condor Hero" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="一、序与迭代1 、eq() 方法123456      &amp;lt;div class=&amp;quot;box2&amp;quot;&amp;gt;	&amp;lt;p class=&amp;quot;teshu&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;	&amp;lt;p class=&amp;quot;teshu&amp;quot;&amp;gt;我想红！我想当明星！&amp;lt;/p&amp;gt;	&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;	&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;">
+<meta name="keywords" content="jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery 的方法">
+<meta property="og:url" content="http://yoursite.com/2019/03/04/jQuery 的方法/index.html">
+<meta property="og:site_name" content="Condor Hero">
+<meta property="og:description" content="一、序与迭代1 、eq() 方法123456      &amp;lt;div class=&amp;quot;box2&amp;quot;&amp;gt;	&amp;lt;p class=&amp;quot;teshu&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;	&amp;lt;p class=&amp;quot;teshu&amp;quot;&amp;gt;我想红！我想当明星！&amp;lt;/p&amp;gt;	&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;	&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16069544-ae1f9492c00e1cf3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16069544-5ab6e7b9d74e1a35.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16069544-e257231e2fe668dd.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16069544-7bf60f80b6c9bb4b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16069544-f87dea7bf04dc5d9.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16069544-ed50c43ed0bc9401.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16069544-3a84b872a3c380b4.gif?imageMogr2/auto-orient/strip">
+<meta property="og:updated_time" content="2019-03-28T09:51:29.327Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery 的方法">
+<meta name="twitter:description" content="一、序与迭代1 、eq() 方法123456      &amp;lt;div class=&amp;quot;box2&amp;quot;&amp;gt;	&amp;lt;p class=&amp;quot;teshu&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;	&amp;lt;p class=&amp;quot;teshu&amp;quot;&amp;gt;我想红！我想当明星！&amp;lt;/p&amp;gt;	&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;	&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/16069544-ae1f9492c00e1cf3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/04/jQuery 的方法/">
+
+
+
+
+
+  <title>jQuery 的方法 | Condor Hero</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Condor Hero</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Divine Condor</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首&emsp;&emsp;页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于博主
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归&emsp;&emsp;档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标&emsp;&emsp;签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分&emsp;&emsp;类
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            站内搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/04/jQuery 的方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Condor Hero">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://ws3.sinaimg.cn/large/005BYqpggy1fzgzvfkc2wj30p20p2abj.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Condor Hero">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">jQuery 的方法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-04T15:05:10+08:00">
+                2019-03-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/jQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">jQuery</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="一、序与迭代"><a href="#一、序与迭代" class="headerlink" title="一、序与迭代"></a>一、序与迭代</h3><h4 id="1-、eq-方法"><a href="#1-、eq-方法" class="headerlink" title="1 、eq() 方法"></a>1 、eq() 方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">      &lt;div class=&quot;box2&quot;&gt;</span><br><span class="line">	&lt;p class=&quot;teshu&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p class=&quot;teshu&quot;&gt;我想红！我想当明星！&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p><code>$(&quot;.box2 p&quot;).eq(1)</code><br><code>$(&quot;p&quot;).eq(1)</code><br><code>$(&quot;.teshu&quot;).eq(1)</code><br><code>$(&quot;.box2 .teshu&quot;).eq(1)</code><br>$() 函数将返回一个对象队列，用 eq 来精确选择这个序列中的某个元素。eq 用法类似数组的下标。</p>
+<p>同样的，lt、gt、odd、even、first、last都是这个机理。</p>
+<h4 id="2、-index-方法"><a href="#2、-index-方法" class="headerlink" title="2、 index() 方法"></a>2、 index() 方法</h4><p><img src="https://upload-images.jianshu.io/upload_images/16069544-ae1f9492c00e1cf3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="index"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;index&lt;/title&gt;</span><br><span class="line">	&lt;style&gt;</span><br><span class="line">		*&#123;</span><br><span class="line">			margin: 0;</span><br><span class="line">			padding: 0;</span><br><span class="line">		&#125;</span><br><span class="line">		div.cen &#123;</span><br><span class="line">			margin: 0 auto;</span><br><span class="line">			height: 500px;</span><br><span class="line">			width: 500px;</span><br><span class="line">		&#125;</span><br><span class="line">		ul &#123;</span><br><span class="line">			list-style: none;</span><br><span class="line">		&#125;</span><br><span class="line">		p &#123;</span><br><span class="line">			height: 50px;</span><br><span class="line">			width: 50px;</span><br><span class="line">			background-color: #5e5e5e;</span><br><span class="line">			margin: 10px;</span><br><span class="line">		&#125;</span><br><span class="line">		p,h3 &#123;</span><br><span class="line">			float: left;</span><br><span class="line">		&#125;</span><br><span class="line">		h3 &#123;</span><br><span class="line">			height: 50px;</span><br><span class="line">			width: 50px;</span><br><span class="line">			background-color: #5e5e5e;</span><br><span class="line">			margin: 10px;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div class=&quot;cen&quot;&gt;</span><br><span class="line">		&lt;div&gt;</span><br><span class="line">			&lt;ul&gt;</span><br><span class="line">				&lt;li&gt;</span><br><span class="line">					&lt;h3&gt;h3&lt;/h3&gt;</span><br><span class="line">					&lt;p&gt;0&lt;/p&gt;</span><br><span class="line">					&lt;p&gt;1&lt;/p&gt;</span><br><span class="line">					&lt;p&gt;2&lt;/p&gt;</span><br><span class="line">				&lt;/li&gt;</span><br><span class="line">			&lt;/ul&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;div&gt;</span><br><span class="line">			&lt;ul&gt;</span><br><span class="line">				&lt;li&gt;</span><br><span class="line">					&lt;p&gt;1&lt;/p&gt;</span><br><span class="line">					&lt;p&gt;3&lt;/p&gt;</span><br><span class="line">					&lt;p&gt;4&lt;/p&gt;</span><br><span class="line">				&lt;/li&gt;</span><br><span class="line">			&lt;/ul&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	&lt;script src=&quot;js/jquery-1.12.3.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">		$(&quot;p&quot;).click(function()&#123;</span><br><span class="line">			alert($(this).index());</span><br><span class="line">		&#125;);</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>index 返回这个元素在亲兄弟中的排名，无视选择器选择标签的类型，只会从选择器选择的标签兄弟开始计数，拿到选择器选择标签的排名。<strong>重点在于计数的时候从选择标签的大哥开始，并不从本身开始。</strong>例子中。h3成功占位。<br>举一个应用实例选中 box1 中的 p 让 box2 的 p 发生改变<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">	$(&quot;.box1 p&quot;).click(function()&#123;</span><br><span class="line">		//有变化的是box2中对应的p</span><br><span class="line">		$(&quot;.box2 p&quot;).eq($(this).index()).css(&quot;background-color&quot;,&quot;red&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>最后强调一下，是 index() 方法，而不是属性！</p>
+<h4 id="3、-each-方法"><a href="#3、-each-方法" class="headerlink" title="3、 each() 方法"></a>3、 each() 方法</h4><p>each() 表示遍历节点，也叫作迭代符合条件的节点。<br>代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;p&quot;).each(function(i)&#123;</span><br><span class="line">	$(this).animate(&#123;&quot;width&quot;:50 * i&#125;,1000);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>each 进行类似 for 循环的功能，遍历所有的 p，然后执行函数。默认传进来的参数 i 是从零开始计数的。$(this) 表示你现在正在遍历的 p。</p>
+<h4 id="4、-size-方法和-length-属性"><a href="#4、-size-方法和-length-属性" class="headerlink" title="4、 size() 方法和 length 属性"></a>4、 size() 方法和 length 属性</h4><p>jQuery 对象中元素的个数。<br>前面 $() 的元素页面上一共有几个，length、size()返回它的个数。是同一个数值。</p>
+<h4 id="5、-get-方法"><a href="#5、-get-方法" class="headerlink" title="5、 get() 方法"></a>5、 get() 方法</h4><p>get() 方法和 eq() 方法基本一致，都仰赖$()的序列。<br>eq() 返回的是 <strong>jQuery 对象</strong>，而 get() 返回的是<strong>原生JS对象</strong>。jQuery 对象后面要跟着 jQuery 方法，原生对象后面要跟着原生属性、方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">	$(&quot;p&quot;).eq(2).html(&quot;哈哈哈哈哈哈&quot;);</span><br><span class="line">等价于：</span><br><span class="line">	$(&quot;p&quot;).get(2).innerHTML = &quot;哈哈哈哈哈哈&quot;;</span><br><span class="line">等价于：</span><br><span class="line">	$(&quot;p&quot;).eq(2)[0].innerHTML = &quot;哈哈哈哈哈哈&quot;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="二、动画相关方法"><a href="#二、动画相关方法" class="headerlink" title="二、动画相关方法"></a>二、动画相关方法</h3><h4 id="1、-内置show-、hide-、toggle-方法"><a href="#1、-内置show-、hide-、toggle-方法" class="headerlink" title="1、 内置show()、hide()、toggle()方法"></a>1、 内置show()、hide()、toggle()方法</h4><p> <img src="https://upload-images.jianshu.io/upload_images/16069544-5ab6e7b9d74e1a35.gif?imageMogr2/auto-orient/strip" alt="内置show()、hide()、toggle()方法"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;togou&lt;/title&gt;</span><br><span class="line">	&lt;style&gt;</span><br><span class="line">		div&#123;</span><br><span class="line">			width: 200px;</span><br><span class="line">			height: 200px;</span><br><span class="line">			background-color: skyblue;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;input type=&quot;button&quot; value=&quot;show&quot;/&gt;</span><br><span class="line">	&lt;input type=&quot;button&quot; value=&quot;hide&quot;/&gt;</span><br><span class="line">	&lt;input type=&quot;button&quot; value=&quot;toggle&quot;/&gt;</span><br><span class="line">	&lt;input type=&quot;button&quot; value=&quot;show(1000)&quot;/&gt;</span><br><span class="line">	&lt;input type=&quot;button&quot; value=&quot;hide(1000)&quot;/&gt;</span><br><span class="line">	&lt;input type=&quot;button&quot; value=&quot;toggle(1000)&quot;/&gt;</span><br><span class="line"></span><br><span class="line">	&lt;div&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script type=&quot;text/javascript&quot; src=&quot;jquery-1.12.3.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">		</span><br><span class="line">		$(&quot;input:eq(0)&quot;).click(function()&#123;</span><br><span class="line">			$(&quot;div&quot;).show();		//让一个本身是display:none;元素显示</span><br><span class="line">		&#125;);</span><br><span class="line"></span><br><span class="line">		$(&quot;input:eq(1)&quot;).click(function()&#123;</span><br><span class="line">			$(&quot;div&quot;).hide(); 		//隐藏元素display:none;</span><br><span class="line">		&#125;);</span><br><span class="line"></span><br><span class="line">		$(&quot;input:eq(2)&quot;).click(function()&#123;</span><br><span class="line">			$(&quot;div&quot;).toggle();		//切换显示状态。</span><br><span class="line">									//自行带有判断，如果可见，就隐藏；否则显示。</span><br><span class="line">		&#125;);</span><br><span class="line"></span><br><span class="line">		$(&quot;input:eq(3)&quot;).click(function()&#123;</span><br><span class="line">			$(&quot;div&quot;).show(1000);		//让一个本身是display:none;元素显示</span><br><span class="line">		&#125;);</span><br><span class="line"></span><br><span class="line">		$(&quot;input:eq(4)&quot;).click(function()&#123;</span><br><span class="line">			$(&quot;div&quot;).hide(1000); 		//隐藏元素display:none;</span><br><span class="line">		&#125;);</span><br><span class="line"></span><br><span class="line">		$(&quot;input:eq(5)&quot;).click(function()&#123;</span><br><span class="line">			$(&quot;div&quot;).toggle(1000,function()&#123;</span><br><span class="line">				alert(&quot;偷狗完毕！&quot;);</span><br><span class="line">			&#125;);		//切换显示状态,自行带有判断，如果可见，就隐藏；否则显示。。</span><br><span class="line">									</span><br><span class="line">		&#125;);</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>show()显示、hide()隐藏、toggle()切换<br><code>$(&quot;div&quot;).show();        //让一个本身是display:none;元素显示</code><br><code>$(&quot;div&quot;).hide();         //隐藏元素display:none;</code><br><code>$(&quot;div&quot;).toggle();        //切换显示状态。自行带有判断，如果可见，就隐藏；否则显示。</code></li>
+<li><p>如果show()、hide()、toggle()里面有数值，将变为动画：<br><code>$(&quot;div&quot;).show(1000);</code><br>此时display:none;的元素，将从左上角徐徐展开。动画机理：<br>这个display:none;的元素会变为显示的，然后瞬间将宽度、高度、opacity设为0，然后徐徐展开。</p>
+</li>
+<li><p>可以加回调函数：<br>  $(“div”).toggle(1000,function(){</p>
+<pre><code>alert(&quot;偷狗完毕！&quot;);
+</code></pre><p>  });    </p>
+</li>
+</ul>
+<p>语法就是：<br>    <code>$(&quot;div&quot;).show([时间],[回调函数]);</code><br>[] 表示这个参数可选。</p>
+<h3 id="2、slideDown-、slideUp-、slideToggle-方法"><a href="#2、slideDown-、slideUp-、slideToggle-方法" class="headerlink" title="2、slideDown()、slideUp()、slideToggle()方法"></a>2、slideDown()、slideUp()、slideToggle()方法</h3><p>把上面的方法更改成本次方法就变成如下效果。<br><img src="https://upload-images.jianshu.io/upload_images/16069544-e257231e2fe668dd.gif?imageMogr2/auto-orient/strip" alt="slideDown()、slideUp()、slideToggle()方法.gif"><br>slide<img src="https://upload-images.jianshu.io/upload_images/16069544-7bf60f80b6c9bb4b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="slide"></p>
+<ul>
+<li>slideDown : 下滑展开</li>
+<li>slideUp：上滑收回</li>
+<li>slideToggle : 滑动切换<br><code>$(&quot;div&quot;).slideDown();</code><br><strong>slideDown() 的起点一定是 display:none 换句话说，只有display:none的元素，才能够调用slideDown()</strong><br>动画机理：<br>一个display:none的元素，瞬间显示，瞬间高度变为0，然后jQuery自己捕捉原有的height设置为动画的终点。<br>等价于4条语句：<br><code>$(&quot;div&quot;).show();  //瞬间显示</code><br><code>var oldHeight = $(&quot;div&quot;).css(&quot;height&quot;);   //记忆住原有的高度</code><br><code>$(&quot;div&quot;).css(&quot;height&quot;,0);   //瞬间变为0</code><br><code>$(&quot;div&quot;).animate({&quot;height&quot; : oldHeight},1000);   //动画！终点是oldHeight</code><br>相反的，slideUp()的终点就是display:none;<br>同样的，slideDown、slideUp、slideToggle里面可以写动画时间、回调函数。</li>
+</ul>
+<p><a href="https://www.jianshu.com/p/3e4eb7c4a35e" target="_blank" rel="noopener">一个水平导航栏的显示隐藏实例</a></p>
+<h4 id="3、fadeIn-、fadeOut-、fadeTo"><a href="#3、fadeIn-、fadeOut-、fadeTo" class="headerlink" title="3、fadeIn()、fadeOut()、fadeTo()"></a>3、fadeIn()、fadeOut()、fadeTo()</h4><p><img src="https://upload-images.jianshu.io/upload_images/16069544-f87dea7bf04dc5d9.gif?imageMogr2/auto-orient/strip" alt="fadeIn()、fadeOut()、fadeTo().gif"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/16069544-ed50c43ed0bc9401.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="fade"></p>
+<ul>
+<li>fadeIn() 淡入</li>
+<li>fadeOut() 淡出</li>
+<li>fadeTo() 淡到那个数</li>
+<li>fadeToggle() 淡出入切换</li>
+</ul>
+<p>fadeIn() 的起点是<code>display:none;</code> 换句话说，只有display:none的元素，才能执行fadeIn()。 fadeOut() 起点<code>display:block;</code><br>fadeTo 有四个参数，第一个参数是动画的时间，第二个参数是要变到的透明度，第四个参数是回调函数<br><code>$(selector).fadeTo(speed,opacity,easing,callback)</code></p>
+<ul>
+<li>“swing” - 在开头/结尾移动慢，在中间移动快 ; swing 摇摆；改变；冲力；秋千</li>
+<li>“linear” - 匀速移动<br>应用举例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;slideIn&lt;/title&gt;</span><br><span class="line">	&lt;style&gt;</span><br><span class="line">		div &#123;</span><br><span class="line">			height: 200px;</span><br><span class="line">			width: 200px;</span><br><span class="line">			background-color: #5c7bd4;</span><br><span class="line">			border:2px solid red;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div&gt;&lt;/div&gt;</span><br><span class="line">	&lt;script src=&quot;js/jquery-1.12.3.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">		$(&quot;div&quot;).hide(1000,function()&#123;</span><br><span class="line">			$(this).show(1000,function()&#123;</span><br><span class="line">				$(this).slideUp(1000,function()&#123;</span><br><span class="line">					$(this).slideDown(1000,function()&#123;</span><br><span class="line">                      //以下代码才是新学的</span><br><span class="line">						$(this).fadeOut(1000,function()&#123;</span><br><span class="line">							$(this).fadeIn(1000,function()&#123;</span><br><span class="line">								$(this).fadeTo(3000,0.5);</span><br><span class="line">							&#125;);</span><br><span class="line">						&#125;);</span><br><span class="line">					&#125;);</span><br><span class="line">				&#125;);</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;);</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>效果图：<img src="https://upload-images.jianshu.io/upload_images/16069544-3a84b872a3c380b4.gif?imageMogr2/auto-orient/strip" alt="fadeIn()、fadeOut()、fadeTo().gif"><br><strong>到此我们可以使用新学的 jQuery 来改写原生写法的轮播图。</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;jQuery 改写轮播图&lt;/title&gt;</span><br><span class="line">	&lt;style&gt;</span><br><span class="line">		*&#123;</span><br><span class="line">			margin: 0;</span><br><span class="line">			padding: 0;</span><br><span class="line">		&#125;</span><br><span class="line">		.carousel &#123;</span><br><span class="line">			width: 560px;</span><br><span class="line">			height: 300px;</span><br><span class="line">			margin:100px auto;</span><br><span class="line">			position: relative;</span><br><span class="line">		&#125;</span><br><span class="line">		.carousel ul &#123;</span><br><span class="line">			list-style: none;</span><br><span class="line">		&#125;</span><br><span class="line">		.carousel .imageslist ul li &#123;</span><br><span class="line">			position: absolute;</span><br><span class="line">			top: 0;</span><br><span class="line">			left: 0;</span><br><span class="line">			display: none;</span><br><span class="line">		&#125;</span><br><span class="line">		.carousel .imageslist ul li.cur &#123;</span><br><span class="line">			display: block;</span><br><span class="line">		&#125;</span><br><span class="line">		.leftbtn &#123;</span><br><span class="line">			height: 55px;</span><br><span class="line">			width: 55px;</span><br><span class="line">			position: absolute;</span><br><span class="line">			top: 50%;</span><br><span class="line">			left: 20px;</span><br><span class="line">			margin-top: -27.5px;</span><br><span class="line">			background-image: url(images/slide-btnL.png);</span><br><span class="line">			z-index: 99;</span><br><span class="line">			cursor: pointer;</span><br><span class="line">		&#125;</span><br><span class="line">		.rightbtn &#123;</span><br><span class="line">			height: 55px;</span><br><span class="line">			width: 55px;</span><br><span class="line">			position: absolute;</span><br><span class="line">			top: 50%;</span><br><span class="line">			right: 20px;</span><br><span class="line">			margin-top: -27.5px;</span><br><span class="line">			background-image: url(images/slide-btnR.png);</span><br><span class="line">			z-index: 99;</span><br><span class="line">			cursor: pointer;</span><br><span class="line">		&#125;</span><br><span class="line">		.carousel .circles &#123;</span><br><span class="line">			width: 150px;</span><br><span class="line">			height: 16px;</span><br><span class="line">			position: absolute;</span><br><span class="line">			bottom: 10px;</span><br><span class="line">			right: 10px;</span><br><span class="line">		&#125;</span><br><span class="line">		.carousel .circles ul li &#123;</span><br><span class="line">			float: left;</span><br><span class="line">			height: 16px;</span><br><span class="line">			width: 16px;</span><br><span class="line">			border-radius: 50%;</span><br><span class="line">			background-color: orange;</span><br><span class="line">			cursor: pointer;</span><br><span class="line">			margin-right: 12px;</span><br><span class="line">		&#125;</span><br><span class="line">		.carousel .circles ul li.first &#123;</span><br><span class="line">			background-color: skyblue;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div class=&quot;carousel&quot; id=&quot;carousel&quot;&gt;</span><br><span class="line">		&lt;div class=&quot;btns&quot;&gt;</span><br><span class="line">			&lt;div class=&quot;leftbtn&quot; id=&quot;leftbtn&quot;&gt;&lt;/div&gt;</span><br><span class="line">			&lt;div class=&quot;rightbtn&quot; id=&quot;rightbtn&quot;&gt;&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;div class=&quot;imageslist&quot; id=&quot;imageslist&quot;&gt;</span><br><span class="line">			&lt;ul&gt;</span><br><span class="line">				&lt;li class=&apos;cur&apos;&gt;&lt;a href=&quot;&quot;&gt;&lt;img src=&quot;images/0.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">				&lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;img src=&quot;images/1.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">				&lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;img src=&quot;images/2.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">				&lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;img src=&quot;images/3.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">				&lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;img src=&quot;images/4.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">			&lt;/ul&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;div class=&quot;circles&quot;&gt;</span><br><span class="line">			&lt;ul&gt;</span><br><span class="line">				&lt;li class=&quot;first&quot;&gt;&lt;/li&gt;</span><br><span class="line">				&lt;li&gt;&lt;/li&gt;</span><br><span class="line">				&lt;li&gt;&lt;/li&gt;</span><br><span class="line">				&lt;li&gt;&lt;/li&gt;</span><br><span class="line">			&lt;/ul&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	&lt;script src=&quot;js/jquery-1.12.3.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">		//jQuery变量，我们习惯以$开头</span><br><span class="line">		var $lis = $(&quot;#imageslist ul li&quot;);</span><br><span class="line">		var idx = 0;</span><br><span class="line">		//右按钮添加事件监听</span><br><span class="line">		$(&quot;#rightbtn&quot;).click(function()&#123;</span><br><span class="line">			//节流</span><br><span class="line">			if($lis.eq(idx).is(&quot;:animated&quot;))&#123;</span><br><span class="line">				return;</span><br><span class="line">			&#125;</span><br><span class="line">			//老图淡出</span><br><span class="line">			$lis.eq(idx).fadeOut(1000);</span><br><span class="line">			//信号量改变</span><br><span class="line">			idx++;</span><br><span class="line">			if(idx &gt; $lis.length - 1)&#123;</span><br><span class="line">				idx = 0;</span><br><span class="line">			&#125;</span><br><span class="line">			//新图淡入</span><br><span class="line">			$lis.eq(idx).fadeIn(1000);</span><br><span class="line">		&#125;)</span><br><span class="line"></span><br><span class="line">		//左按钮添加事件监听</span><br><span class="line">		$(&quot;#leftbtn&quot;).click(function()&#123;</span><br><span class="line">			//节流</span><br><span class="line">			if($lis.eq(idx).is(&quot;:animated&quot;))&#123;</span><br><span class="line">				return;</span><br><span class="line">			&#125;</span><br><span class="line">			//老图淡出</span><br><span class="line">			$lis.eq(idx).fadeOut(1000);</span><br><span class="line">			//信号量改变</span><br><span class="line">			idx--;</span><br><span class="line">			if(idx &lt; 0)&#123;</span><br><span class="line">				idx = $lis.length - 1;</span><br><span class="line">			&#125;</span><br><span class="line">			//新图淡入</span><br><span class="line">			$lis.eq(idx).fadeIn(1000);</span><br><span class="line">		&#125;)</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="4、stop-和-flish-delay-is-“-animated”"><a href="#4、stop-和-flish-delay-is-“-animated”" class="headerlink" title="4、stop() 和 flish() delay() is(“:animated”)"></a>4、stop() 和 flish() delay() is(“:animated”)</h4><ul>
+<li>stop() </li>
+</ul>
+<p>stop() 停止当前的animate动画，但是不清除队列，立即执行后面的animate动画：<br><code>$(&quot;div&quot;).stop();   //等价于$(“div”).stop(false,false);</code><br>停止当前的animate动画，并且清除队列，盒子留在了此时的位置：<br><code>$(&quot;div&quot;).stop(true);   //等价于$(“div”).stop(true,false);</code><br>瞬间完成当前的animate动画，并且清除队列：<br><code>$(&quot;div&quot;).stop(true,true);</code><br>瞬间完成当前的animate动画，但是不清楚队列，立即执行后面的动画：<br><code>$(&quot;div&quot;).stop(false,true);</code></p>
+<p>公式：<br>stop(是否清除队列,是否瞬间完成当前动画)<br>如果没有写 true 或者 false，默认是 false</p>
+<ul>
+<li>finish()</li>
+</ul>
+<p>finish() 瞬间完成所有动画队列！<br>    <code>$(&quot;div&quot;).finish();</code></p>
+<p>stop可以用来防止动画的积累：<br>    //连续打点语法，先清除所有的动画队列，然后执行新的动画<br><code>$(&quot;div&quot;).stop(true).animate({&quot;left&quot;:100},1000);</code></p>
+<ul>
+<li>delay()<br>delay延迟，可以使用连续打点，必须放在运动语句之前。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&quot;).delay(1000).animate(&#123;&quot;left&quot;:500&#125;,1000);	</span><br><span class="line">$(&quot;div&quot;).delay(1000).slideUp();</span><br><span class="line">$(&quot;div&quot;).delay(1000).hide(1);   //必须写1，写1了就是运动</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>小窍门，让所有的img元素，都延迟不同的时间入场：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;img&quot;).each(function(i)&#123;</span><br><span class="line">	//attr() 方法设置或返回被选元素的属性和值。</span><br><span class="line">	$(this).delay(i * 1000).fadeIn(1000);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>is(“:animated”)</li>
+</ul>
+<p>is()方法表示身份探测，<strong>只返回true、false。</strong><br><strong>is表示“是不是”，而不是“是”</strong>is里面可以写筛选器：<br>判断点击的这个p是不是序号是奇数：<br><code>$(this).is(&quot;p:odd&quot;)</code><br>判断点击的这个p是不是序号小于3：<br><code>$(this).is(&quot;p:lt(3)&quot;)</code></p>
+<p>还可以写<br><code>is(&quot;:animated&quot;)</code><br>判断这个元素是否在运动中。<br>is里面可以写筛选器：<br>判断点击的这个p是不是序号是奇数：<br><code>$(this).is(&quot;p:odd&quot;)</code><br>判断点击的这个p是不是序号小于3：<br><code>$(this).is(&quot;p:lt(3)&quot;)</code></p>
+<p>还可以写<br><code>is(&quot;:animated&quot;)</code><br>判断这个元素是否在运动中。</p>
+<p>stop 和 if return 进行节流时候的区别？<br>当动画接受命令，没设置节流，动画会进行积累。stop 用于暂停当前操作，立马进行下一步。立马相应用户的命令。if return  防止用户流氓操作。基本上 if return  用于轮播和导航 slidedown/slideup。其他的用stop。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>一路走来，感谢有你</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://ws3.sinaimg.cn/large/005BYqpggy1fzfgyvd98pj30s00s0mxu.jpg" alt="Condor Hero 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jQuery/" rel="tag"># jQuery</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/28/jQuery框架准备学习/" rel="next" title="jQuery框架准备学习">
+                <i class="fa fa-chevron-left"></i> jQuery框架准备学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/08/百叶窗轮播（shutter）/" rel="prev" title="百叶窗轮播（shutter）">
+                百叶窗轮播（shutter） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://ws3.sinaimg.cn/large/005BYqpggy1fzgzvfkc2wj30p20p2abj.jpg" alt="Condor Hero">
+            
+              <p class="site-author-name" itemprop="name">Condor Hero</p>
+              <p class="site-description motion-element" itemprop="description">记录生活，努力学习。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/condorheroblog" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:2846124732@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/491bd4155f96" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-globe"></i>简书</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://sighttp.qq.com/authd?IDKEY=f67c919702f76aff21f09284308fe39875d3f6b466780165" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-globe"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、序与迭代"><span class="nav-number">1.</span> <span class="nav-text">一、序与迭代</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-、eq-方法"><span class="nav-number">1.1.</span> <span class="nav-text">1 、eq() 方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、-index-方法"><span class="nav-number">1.2.</span> <span class="nav-text">2、 index() 方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、-each-方法"><span class="nav-number">1.3.</span> <span class="nav-text">3、 each() 方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、-size-方法和-length-属性"><span class="nav-number">1.4.</span> <span class="nav-text">4、 size() 方法和 length 属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、-get-方法"><span class="nav-number">1.5.</span> <span class="nav-text">5、 get() 方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、动画相关方法"><span class="nav-number">2.</span> <span class="nav-text">二、动画相关方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、-内置show-、hide-、toggle-方法"><span class="nav-number">2.1.</span> <span class="nav-text">1、 内置show()、hide()、toggle()方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、slideDown-、slideUp-、slideToggle-方法"><span class="nav-number">3.</span> <span class="nav-text">2、slideDown()、slideUp()、slideToggle()方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3、fadeIn-、fadeOut-、fadeTo"><span class="nav-number">3.1.</span> <span class="nav-text">3、fadeIn()、fadeOut()、fadeTo()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、stop-和-flish-delay-is-“-animated”"><span class="nav-number">3.2.</span> <span class="nav-text">4、stop() 和 flish() delay() is(“:animated”)</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Condor Hero</span>
+
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+由hexo驱动-->
+
+
+  <!--<div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>版本号-->
+
+
+
+
+
+<!--以下为添加的代码-->
+      <!--统计start-->
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <div class="powered-by">
+        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+          本站访客数:<span id="busuanzi_value_site_pv"></span>
+        </span>
+        </div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
