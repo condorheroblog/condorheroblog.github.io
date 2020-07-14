@@ -1930,7 +1930,7 @@ HTML和CSS搭建页面1234567891011121314151617181920212223242526
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2019-02-17 17:15:34 &mdash; <span itemprop="copyrightYear" id="currentTime"></span>
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear" id="currentTime"></span>
   <span class="with-love" id="heart">
     <i class="fa fa-heart"></i>
   </span>
@@ -2124,7 +2124,12 @@ HTML和CSS搭建页面1234567891011121314151617181920212223242526
 
   <script type="text/javascript">
     // current time 
-    $('#currentTime').text(new Date().getFullYear());
+    const currentTime = new Date();
+    setInterval(()=>{
+        const time = currentTime.toLocaleDateString().replace(/\//g,"-") + " " + currentTime.toLocaleTimeString('chinese', { hour12: false });
+        $('#currentTime').text(time);
+    },1000);
+    
     // Popup Window;
     var isfetched = false;
     var isXml = true;
