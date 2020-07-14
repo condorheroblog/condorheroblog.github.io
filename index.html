@@ -1930,7 +1930,7 @@ HTML和CSS搭建页面1234567891011121314151617181920212223242526
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear" id="currentTime"></span>
   <span class="with-love" id="heart">
     <i class="fa fa-heart"></i>
   </span>
@@ -2123,6 +2123,8 @@ HTML和CSS搭建页面1234567891011121314151617181920212223242526
   
 
   <script type="text/javascript">
+    // current time 
+    $('#currentTime').text(new Date().getFullYear());
     // Popup Window;
     var isfetched = false;
     var isXml = true;
