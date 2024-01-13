@@ -22,3 +22,7 @@ pnpm run new-post
 ```bash
 pnpm run update-theme
 ```
+
+## 协议
+
+<samp>代码使用 <a href='https://github.com/condorheroblog/condorheroblog.github.io/blob/master/LICENSE'>MIT</a> 协议，文字和图片使用 <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/'>CC BY-NC-SA 4.0</a> 协议</samp>。
