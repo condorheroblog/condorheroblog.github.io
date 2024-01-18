@@ -1,7 +1,7 @@
 ---
 title: Tree shaking 和 No side effects
 pubDate: 2024-01-16
-categories: ['Blog', '上海']
+categories: ['Blog', '技术']
 description: ''
 ---
 
@@ -304,3 +304,5 @@ console.log(square(5));
 - [Support `#__NO_SIDE_EFFECTS__` comment from Rollup](https://github.com/evanw/esbuild/issues/3149)
 - [Perf: mark defineComponent as side-effects-free](https://github.com/vuejs/core/pull/8512)
 - [Webpack4+ Tree shaking](https://github.com/willson-wang/Blog/issues/108)
+
+> 上海 2024 年 01 月 18 日 19:20:24
