@@ -291,6 +291,104 @@ console.log(square(5));
 
 [编译结果](https://rollupjs.org/repl/?version=4.9.5&shareable=JTdCJTIyZXhhbXBsZSUyMiUzQW51bGwlMkMlMjJtb2R1bGVzJTIyJTNBJTVCJTdCJTIyY29kZSUyMiUzQSUyMiUyRiUyRiUyMG1haW4uanMlNUNuaW1wb3J0JTIwJTdCJTIwc3F1YXJlJTIwJTdEJTIwZnJvbSUyMCcuJTJGbWF0aHMuanMnJTNCJTVDbiU1Q25jb25zb2xlLmxvZyhzcXVhcmUoNSkpJTNCJTIyJTJDJTIyaXNFbnRyeSUyMiUzQXRydWUlMkMlMjJuYW1lJTIyJTNBJTIybWFpbi5qcyUyMiU3RCUyQyU3QiUyMmNvZGUlMjIlM0ElMjIlMkYlMkYlMjBzcmMlMkZtYXRoLmpzJTVDbiU1Q25leHBvcnQlMjBmdW5jdGlvbiUyMHNxdWFyZSUyMCh4KSUyMCU3QiU1Q24lMjAlMjByZXR1cm4lMjB4JTIwKiUyMHglM0IlNUNuJTdEJTVDbiU1Q24lMkYqJTIwJTIzX19OT19TSURFX0VGRkVDVFNfXyUyMColMkYlNUNuZnVuY3Rpb24lMjBnZXRNZXNzYWdlJTIwKGNhbGxiYWNrKSUyMCU3QiU1Q24lMjAlMjByZXR1cm4lMjBjYWxsYmFjaygpJTNCJTVDbiU3RCU1Q24lNUNuZXhwb3J0JTIwY29uc3QlMjBoaSUyMCUzRCUyMGdldE1lc3NhZ2UoKCklMjAlM0QlM0UlMjAlNUMlMjJIaSU1QyUyMiklM0IlNUNuZXhwb3J0JTIwY29uc3QlMjBoZWxsbyUyMCUzRCUyMGdldE1lc3NhZ2UoKCklMjAlM0QlM0UlMjAlNUMlMjJIZWxsbyU1QyUyMiklM0IlMjIlMkMlMjJpc0VudHJ5JTIyJTNBZmFsc2UlMkMlMjJuYW1lJTIyJTNBJTIybWF0aHMuanMlMjIlN0QlNUQlMkMlMjJvcHRpb25zJTIyJTNBJTdCJTIyb3V0cHV0JTIyJTNBJTdCJTIyZm9ybWF0JTIyJTNBJTIyZXMlMjIlN0QlMkMlMjJ0cmVlc2hha2UlMjIlM0ElN0IlMjJtb2R1bGVTaWRlRWZmZWN0cyUyMiUzQWZhbHNlJTdEJTdEJTdE)
 
+## 使用建议
+
+Tree Shaking 是打包工具默认支持的，不用自己操心，除非你需要 `import "xxx"` 来直接执行一些逻辑，否则一定要把 sideEffects 设置为 false。
+
+如果你需要在 __模块中__ 直接 __调用函数__ 或 __实例化类__，这些函数和类本身比较复杂，且只有一两处地方则应该使用 `@__PURE__`。
+
+```js
+// https://github.com/mrdoob/three.js/blob/84aab91a703881ff3778db1b4d702b729b66c70f/src/math/Sphere.js#L4
+const _box = /*@__PURE__*/ new Box3();
+const _v1 = /*@__PURE__*/ new Vector3();
+const _v2 = /*@__PURE__*/ new Vector3();
+
+// https://github.com/mrdoob/three.js/blob/84aab91a703881ff3778db1b4d702b729b66c70f/src/extras/DataUtils.js#L5
+const _tables = /*@__PURE__*/ _generateTables();
+
+// https://github.com/mrdoob/three.js/blob/84aab91a703881ff3778db1b4d702b729b66c70f/examples/jsm/libs/fflate.module.js#L1302
+var Unzlib = /*#__PURE__*/ (function () {
+    /**
+     * Creates a Zlib decompression stream
+     * @param cb The callback to call whenever data is inflated
+     */
+    function Unzlib(cb) {
+        this.v = 1;
+        Inflate.call(this, cb);
+    }
+    /**
+     * Pushes a chunk to be unzlibbed
+     * @param chunk The chunk to push
+     * @param final Whether this is the last chunk
+     */
+    Unzlib.prototype.push = function (chunk, final) {
+        Inflate.prototype.e.call(this, chunk);
+        if (this.v) {
+            if (this.p.length < 2 && !final)
+                return;
+            this.p = this.p.subarray(2), this.v = 0;
+        }
+        if (final) {
+            if (this.p.length < 4)
+                throw 'invalid zlib stream';
+            this.p = this.p.subarray(0, -4);
+        }
+        // necessary to prevent TS from using the closure value
+        // This allows for workerization to function correctly
+        Inflate.prototype.c.call(this, final);
+    };
+    return Unzlib;
+}());
+```
+
+调用地方过多，你就应该考虑使用 `@__NO_SIDE_EFFECTS__` 来减轻你的工作，比如：
+
+```ts
+// https://github.com/sveltejs/svelte/blob/0fd1c92822246ca2a98f8de7c87ac2e5ff743534/packages/svelte/src/internal/client/operations.js#L156
+/*#__NO_SIDE_EFFECTS__*/
+export function clone_node(node, deep) {
+  return /** @type {N} */ (clone_node_method.call(node, deep));
+}
+
+// https://github.com/intlify/vue-i18n-next/blob/1e66f58c7f0305474cb904594ebfd2e003b3a19b/packages/vue-i18n-core/src/i18n.ts#L954
+/* #__NO_SIDE_EFFECTS__ */
+export const castToVueI18n = (
+  i18n: I18n
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+): VueI18n & { install: (Vue: any, options?: any) => void } => {
+  if (!(__VUE_I18N_BRIDGE__ in i18n)) {
+    throw createI18nError(I18nErrorCodes.NOT_COMPATIBLE_LEGACY_VUE_I18N)
+  }
+  return i18n as unknown as VueI18n & {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    install: (Vue: any, options?: any) => void
+  }
+}
+
+// https://github.com/vuejs/core/blob/ee4cd78a06e6aa92b12564e527d131d1064c2cd0/packages/runtime-dom/src/apiCustomElement.ts#L143
+/*! #__NO_SIDE_EFFECTS__ */
+export function defineCustomElement(
+  options: any,
+  hydrate?: RootHydrateFunction,
+): VueElementConstructor {
+  const Comp = defineComponent(options) as any
+  class VueCustomElement extends VueElement {
+    static def = Comp
+    constructor(initialProps?: Record<string, any>) {
+      super(Comp, initialProps, hydrate)
+    }
+  }
+
+  return VueCustomElement
+}
+
+/*! #__NO_SIDE_EFFECTS__ */
+export const defineSSRCustomElement = ((options: any) => {
+  // @ts-expect-error
+  return defineCustomElement(options, hydrate)
+}) as typeof defineCustomElement
+```
+
 ## 参考链接
 
 - [javascript-compiler-hints compiler-notations-spec](https://github.com/javascript-compiler-hints/compiler-notations-spec)
