@@ -17,7 +17,6 @@ export async function GET(_context: APIContext) {
     title: title,
     description: desc,
     site: website,
-    // @ts-expect-error
     items: posts.map((post) => {
       return {
         link: `/posts/${post.slug}/`,
