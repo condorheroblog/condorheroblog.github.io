@@ -17,18 +17,20 @@ description: ''
 
 下面是一些我常用的 Mac 插件，排名不分先后，一个表格列出插件名称、用途、下载地址。
 
-| 使用状态 | 插件名称       |     用途     |                        下载地址                        |
-|:--------:|----------------|:------------:|:------------------------------------------------------:|
-|    ✅     | BetterDisplays |  显示器管理  | [下载地址](https://github.com/waydabber/BetterDisplay) |
-|    ✅     | AgentNEO       |   代理管理   |            [下载地址](https://neoproxy.me/)            |
-|    ✅     | 剪映           | 视频编辑软件 |        [下载地址](https://www.jianying.com/web)        |
-|    ✅     | MacZip         |   压缩软件   |         [下载地址](https://ezip.awehunt.com/)          |
-|    ✅     | Tencent Lemon  |   腾讯柠檬   |           [下载地址](https://lemon.qq.com/)            |
-|    ✅     | GIF Brewery 3  | GIF 录制软件 |                           空                           |
-|    ✅     | PDG gear       |     PDF      |          [下载地址](https://www.pdfgear.com/)          |
-|    ✅     | `Maccy`        |  剪切板管理  |          [下载地址](https://maccy.app/)          |
-
-
+| 使用状态 | 插件名称               |     用途     |                        下载地址                        |
+|:--------:|------------------------|:------------:|:------------------------------------------------------:|
+|    ✅     | BetterDisplays         |  显示器管理  | [下载地址](https://github.com/waydabber/BetterDisplay) |
+|    ✅     | AgentNEO               |   代理管理   |            [下载地址](https://neoproxy.me/)            |
+|    ✅     | 剪映                   | 视频编辑软件 |        [下载地址](https://www.jianying.com/web)        |
+|    ✅     | MacZip                 |   压缩软件   |         [下载地址](https://ezip.awehunt.com/)          |
+|    ✅     | Tencent Lemon          |   腾讯柠檬   |           [下载地址](https://lemon.qq.com/)            |
+|    ❌     | GIF Brewery 3          | GIF 录制软件 |                        不再更新                        |
+|    ✅     | `Kap`                  | GIF 录制软件 |             [下载地址](https://getkap.co/)              |
+|    ✅     | PDG gear               |     PDF      |          [下载地址](https://www.pdfgear.com/)          |
+|    ✅     | `Maccy`                |  剪切板管理  |             [下载地址](https://maccy.app/)             |
+|    ✅     | `HandBrake`            | 视频转换压缩 |           [下载地址](https://handbrake.fr/)            |
+|    ✅     | `Elmedia Video Player` |  视频播放器  |          [下载地址](https://mac.eltima.com/)           |
+|    ✅     | `Rectangle`            | 窗口管理器  |          [下载地址](https://rectangleapp.com/)          |
 
 
 ## VSCode 插件
