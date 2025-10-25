@@ -1,5 +1,5 @@
 ---
-title: 入职新公司
+title: 2024-07-01 入职「博续科技」
 pubDate: 2024-07-02
 categories: ['Blog', '上海']
 description: '博续科技，boxutech.com'
