@@ -26,7 +26,7 @@ description: ''
 |    ✅     | Tencent Lemon          |   腾讯柠檬   |           [下载地址](https://lemon.qq.com/)            |
 |    ❌     | GIF Brewery 3          | GIF 录制软件 |                        不再更新                        |
 |    ✅     | `Kap`                  | GIF 录制软件 |             [下载地址](https://getkap.co/)             |
-|    ✅     | PDG gear               |     PDF      |          [下载地址](https://www.pdfgear.com/)          |
+|    ✅     | PDFgear               |     PDF      |          [下载地址](https://www.pdfgear.com/)          |
 |    ✅     | `Maccy`                |  剪切板管理  |             [下载地址](https://maccy.app/)             |
 |    ✅     | `HandBrake`            | 视频转换压缩 |           [下载地址](https://handbrake.fr/)            |
 |    ✅     | `Elmedia Video Player` |  视频播放器  |          [下载地址](https://mac.eltima.com/)           |
