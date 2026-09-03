@@ -1,0 +1,2 @@
+# 项目中所有 .xsl 文件不参与 GitHub 的语言检测和统计，避免它们影响仓库的语言占比显示。
+*.xsl linguist-detectable=false
