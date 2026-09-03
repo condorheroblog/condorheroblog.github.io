@@ -2,8 +2,8 @@
   "name": "astro-theme-typography",
   "type": "module",
   "version": "0.1.0",
-  "repository": "https://github.com/moeyua/astro-theme-typography",
   "packageManager": "pnpm@10.13.1",
+  "repository": "https://github.com/moeyua/astro-theme-typography",
   "scripts": {
     "dev": "astro check && astro dev",
     "build": "astro check && astro build",
@@ -35,6 +35,7 @@
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^22.16.4",
     "@types/sanitize-html": "^2.16.0",
+    "@unocss/astro": "^66.9.2",
     "@unocss/eslint-plugin": "^66.3.3",
     "@unocss/preset-attributify": "^66.3.3",
     "@unocss/reset": "^66.3.3",
