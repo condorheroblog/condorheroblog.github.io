@@ -1,5 +1,5 @@
 ---
-title: 离职「博续科技」
+title: 离职「XX 科技」
 pubDate: 2025-10-14
 categories: ['Blog', '上海']
 description: '应前公司要求，本文已不再公开展示，敬请谅解。'
